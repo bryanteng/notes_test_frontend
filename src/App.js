@@ -1,24 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  state={
+    input: '',
+    selectedInput: ''
+  }
+
+  handleInputChange = (event) => {
+    this.setState({input: event.target.value})
+
+  }
+  handleOnClick = (event) =>{
+    // event.target.classList.add("comic");
+  }
+
+  logHighlighted = (event) =>{
+    console.log(window.getSelection());
+    console.log(window.getSelection().toString());
+    this.setState({selectedInput: window.getSelection().toString()})
+  }
+
   render() {
+    console.log(this.state);
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <button onClick={this.logHighlighted}>click me</button>
+          <form>
+            <input type="text" onChange={this.handleInputChange}  />
+          </form>
+          <input type="text" onClick={this.handleOnClick} value={this.state.input} />
         </header>
       </div>
     );

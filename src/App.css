@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,6 +20,23 @@
 
 .App-link {
   color: #61dafb;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+font-style: italic;
+color: black;
+}
+
+.comic{
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+::selection {
+  background: #fff2a8; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #fff2a8; /* Gecko Browsers */
 }
 
 @keyframes App-logo-spin {
