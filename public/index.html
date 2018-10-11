@@ -70,9 +70,6 @@
       }).then(res=> res.json())
       .then(console.log)}
 
-        fetch('http://localhost:3000/documents/161')
-        .then(res => res.json())
-        .then(data => quill.setContents(data.delta))
         console.log("A user action triggered this change.");
       }
     })
